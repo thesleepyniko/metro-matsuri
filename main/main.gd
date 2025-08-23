@@ -4,6 +4,7 @@ var screens = ["res://main/menu.tscn"]
 enum enum_screens {menu=0}
 var curr_state # we want to know what state it is...duh...
 var prev_state
+var debug # set by the user to see any
 
 @onready
 var screen_host = get_node("ScreenHost")
@@ -15,14 +16,29 @@ func change_screen(state):
 	var screen = load(screen_path).instantiate() #load it
 	screen_host.add_child(screen) # add as a child
 	
-	
+
 func change_state(new_state):
 	prev_state = curr_state
 	curr_state = new_state
 	change_screen(curr_state)
 
+func _handle_event_change(action, data):
+	if action == "pressed":
+		match data:
+			"Quit":
+				get_tree().quit()
+				print("got quit signal, qutting")
+			"Start":
+				pass # need a test scene
+			
+
+func _on_bus_event(action, data):
+	_handle_event_change(action, data)
+	print("signal recieved: %s, %s" % [action, data])
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Bus.connect("event", Callable(self, "_on_bus_event"))
 	change_state(enum_screens.menu)
 
 

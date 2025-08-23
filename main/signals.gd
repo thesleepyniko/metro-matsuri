@@ -1,6 +1,7 @@
 extends Node
 
-signal pressed(action)
+signal event(action, data)
 
-func button_press(action): # specifically for the menu to trigger
-	emit_signal("pressed", action)
+func send_signal(action, data): # specifically for the menu to trigger
+	emit_signal("event", action, data)
+	print("signal emitted: %s, %s" % [action, data])
