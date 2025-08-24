@@ -1,6 +1,6 @@
 extends Node
 
-var screens = ["res://main/menu.tscn", "res://main/game.tscn"]
+var screens = ["res://main/scenes/menu.tscn", "res://main/scenes/game.tscn"]
 enum enum_screens {menu=0, game=1}
 var curr_state # we want to know what state it is...duh...
 var prev_state

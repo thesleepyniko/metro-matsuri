@@ -13,11 +13,15 @@ config_version=5
 config/name="Metro Matsuri"
 run/main_scene="uid://buqtaiobkfsgi"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://images/icon.svg"
 
 [autoload]
 
-Bus="*res://main/signals.gd"
+Bus="*res://main/scripts/signals.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 

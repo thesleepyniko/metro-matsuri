@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://dssh84h14inwi"]
 
-[ext_resource type="Script" uid="uid://bhtf0s4nx4gtl" path="res://main/menu.gd" id="1_51blw"]
-[ext_resource type="FontFile" uid="uid://h5wknl4iug0l" path="res://fonts/Yuji_Syuku/YujiSyuku-Regular.ttf" id="1_b8sgh"]
+[ext_resource type="Script" uid="uid://bhtf0s4nx4gtl" path="res://main/scripts/menu.gd" id="1_pg3ki"]
+[ext_resource type="FontFile" uid="uid://h5wknl4iug0l" path="res://fonts/Yuji_Syuku/YujiSyuku-Regular.ttf" id="2_h280s"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_b8sgh"]
-font = ExtResource("1_b8sgh")
+font = ExtResource("2_h280s")
 font_size = 60
 
 [node name="Menu" type="Control"]
@@ -14,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_51blw")
+script = ExtResource("1_pg3ki")
 
 [node name="MenuBG" type="ColorRect" parent="."]
 layout_mode = 1
@@ -56,19 +56,19 @@ size_flags_vertical = 6
 [node name="Start" type="Button" parent="MarginContainer/VBoxContainer/ButtonsBox"]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../Quit")
-theme_override_fonts/font = ExtResource("1_b8sgh")
+theme_override_fonts/font = ExtResource("2_h280s")
 theme_override_font_sizes/font_size = 48
 text = "Start Game"
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/ButtonsBox"]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../Settings")
-theme_override_fonts/font = ExtResource("1_b8sgh")
+theme_override_fonts/font = ExtResource("2_h280s")
 theme_override_font_sizes/font_size = 48
 text = "Exit"
 
 [node name="Settings" type="Button" parent="MarginContainer/VBoxContainer/ButtonsBox"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_b8sgh")
+theme_override_fonts/font = ExtResource("2_h280s")
 theme_override_font_sizes/font_size = 48
 text = "Settings (doesn't work yet D:)"

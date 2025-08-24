@@ -1,0 +1,32 @@
+[
+  {
+	"title": "Station Upgrade",
+	"description": "Increase capacity by 20%",
+	"attributes": [
+	  {
+		"stat": "capacity",
+		"op": "+",
+		"value": "20%",
+		"duration": "infinite",
+		"scope": "station",
+		"affects": "1"
+	  }
+	],
+	"image": "res://images/godotwaka.png"
+  },
+  {
+	"title": "Increased Service",
+	"description": "Speed up all trains by 20% for 10 seconds!",
+	"attributes": [
+	  {
+		"stat": "speed",
+		"op": "+",
+		"value": "20%",
+		"duration": "10s",
+		"scope": "train",
+		"affects": "all"
+	  }
+	],
+	"image": "res://images/godotwaka2.png"
+  }
+]
