@@ -1,7 +1,7 @@
 extends Node
 
-var screens = ["res://main/menu.tscn"]
-enum enum_screens {menu=0}
+var screens = ["res://main/menu.tscn", "res://main/game.tscn"]
+enum enum_screens {menu=0, game=1}
 var curr_state # we want to know what state it is...duh...
 var prev_state
 var debug # set by the user to see any
@@ -29,7 +29,8 @@ func _handle_event_change(action, data):
 				get_tree().quit()
 				print("got quit signal, qutting")
 			"Start":
-				pass # need a test scene
+				change_state(enum_screens.game) # need a test scene
+				print("starting game")
 			
 
 func _on_bus_event(action, data):
@@ -42,6 +43,6 @@ func _ready() -> void:
 	change_state(enum_screens.menu)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+## Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta: float) -> void:
+	#pass
