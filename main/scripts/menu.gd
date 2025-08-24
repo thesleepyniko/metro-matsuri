@@ -6,9 +6,13 @@ func _connect_buttons(node: Node):
 			child.pressed.connect(Callable(self, "_on_button_pressed").bind(child))
 		else:
 			_connect_buttons(child)
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
+	randomize() # randomize once per start
 	_connect_buttons(self)
+
+func _enter_tree() -> void:
+	randomize() # if the user comes back to the menu, randomize again
 
 func _on_button_pressed(button: Button):
 	Bus.send_signal("pressed", button.name)
