@@ -40,7 +40,8 @@ func _on_hide_ui_pressed() -> void: # will need to add more later prolly idk :3
 		#$HUD/RootControl/HideUI.text = "Show UI" # Replace with function body.
 
 func _on_exit_pressed() -> void:
-	pass # Replace with function body.
+	print("exit was pressed")
+	Bus.emit_signal("event", "exit_game", "") 
 
 func _generate_nodes():
 	pass

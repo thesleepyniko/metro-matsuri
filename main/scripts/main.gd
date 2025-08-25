@@ -35,6 +35,8 @@ func _handle_event_change(action, data):
 				change_state(enum_screens.game) 
 	if action == "failed":
 		change_screen(enum_screens.failed)
+	if action == "exit_game":
+		change_screen(enum_screens.menu)
 			
 
 func _on_bus_event(action, data):

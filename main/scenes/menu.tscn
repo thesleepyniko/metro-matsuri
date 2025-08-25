@@ -8,7 +8,7 @@ font = ExtResource("2_h280s")
 font_size = 60
 
 [sub_resource type="LabelSettings" id="LabelSettings_pg3ki"]
-font_size = 30
+font_size = 23
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -52,8 +52,13 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "You can only place lines! cards don't work yet D:"
+text = "You can only place lines! cards don't work yet D:
+- to zoom out, + to zoom in
+edit lines button on side to edit lines
+gray squares are stations, draw anywhere on the green
+you can't really fail if you draw lines between everything (will update later)
+IF ONLY ONE GRAY SQUARE SHOWS UP PLEASE EXIT AND REENTER THE GAME D:
+"
 label_settings = SubResource("LabelSettings_pg3ki")
 horizontal_alignment = 1
 

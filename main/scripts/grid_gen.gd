@@ -368,6 +368,8 @@ func _on_edit_mode_pressed() -> void:
 	# next we set the default mode (is placing)
 	is_placing = true
 	already_placing = true
+	is_deleting = false
+	already_deleting = false
 	#var new_stylebox = stylebox
 	#new_stylebox.icon_normal_color = Color.WEB_GREEN
 	place_line.add_theme_color_override("font_color", Color.DODGER_BLUE)
@@ -384,7 +386,17 @@ func _on_delete_line_pressed() -> void:
 	place_line.remove_theme_color_override("font_focus_color")
 	delete_line.add_theme_color_override("font_color", Color.DODGER_BLUE)
 	delete_line.add_theme_color_override("font_focus_color", Color.DODGER_BLUE)
-	
+
+func _on_place_line_pressed() -> void:
+	is_placing = true
+	already_placing = true
+	is_deleting = false
+	already_deleting = false
+	delete_line.remove_theme_color_override("font_color")
+	delete_line.remove_theme_color_override("font_focus_color")
+	place_line.add_theme_color_override("font_color", Color.DODGER_BLUE)
+	place_line.add_theme_color_override("font_focus_color", Color.DODGER_BLUE)
+
 func _on_stop_edit_pressed() -> void:
 	edit_mode.visible = true
 	place_line.visible = false

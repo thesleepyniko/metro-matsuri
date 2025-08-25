@@ -147,5 +147,6 @@ text = "Stop Editing"
 [connection signal="pressed" from="HUD/RootControl/HideUI" to="." method="_on_hide_ui_pressed"]
 [connection signal="pressed" from="HUD/RootControl/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="HUD/RootControl/VBoxContainer/EditMode" to="Grid" method="_on_edit_mode_pressed"]
+[connection signal="pressed" from="HUD/RootControl/VBoxContainer/PlaceLine" to="Grid" method="_on_place_line_pressed"]
 [connection signal="pressed" from="HUD/RootControl/VBoxContainer/DeleteLine" to="Grid" method="_on_delete_line_pressed"]
 [connection signal="pressed" from="HUD/RootControl/VBoxContainer/StopEdit" to="Grid" method="_on_stop_edit_pressed"]
