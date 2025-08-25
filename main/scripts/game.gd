@@ -32,6 +32,13 @@ func _on_hide_ui_pressed() -> void: # will need to add more later prolly idk :3
 		$HUD/RootControl/Cards.visible = false
 		$HUD/RootControl/HideUI.text = "Show UI"
 
+#func _on_place_line_pressed() -> void:
+	#if $HUD/RootControl/Cards.text == "Place Lines":
+		#$HUD/RootControl/HideUI.visbile = false
+	#elif $HUD/RootControl/Cards.visible == true:
+		#$HUD/RootControl/Cards.visible = false
+		#$HUD/RootControl/HideUI.text = "Show UI" # Replace with function body.
+
 func _on_exit_pressed() -> void:
 	pass # Replace with function body.
 
