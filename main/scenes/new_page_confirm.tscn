@@ -44,9 +44,9 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "haiii! to play, please open
-this in a new tab or fullscreen
-then unfullscreen! Else,
-textures (and the game)
+this in a new tab! else,
+textures will 
+disappear and the game
 will not be playable :3"
 label_settings = SubResource("LabelSettings_b8sgh")
 horizontal_alignment = 1
