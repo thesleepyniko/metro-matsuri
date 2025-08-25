@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj0l6a513mf3e"]
+
+[ext_resource type="Script" uid="uid://j455n6ihkvxv" path="res://main/scripts/fail_screen.gd" id="1_pi7d3"]
+[ext_resource type="FontFile" uid="uid://h5wknl4iug0l" path="res://fonts/Yuji_Syuku/YujiSyuku-Regular.ttf" id="2_qn7k8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b8sgh"]
+font = ExtResource("2_qn7k8")
+font_size = 60
+
+[node name="FailScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pi7d3")
+
+[node name="MenuBG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.14902, 0.223529, 0.337255, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "You Failed D:
+Tip: Try connecting the gray
+squares!"
+label_settings = SubResource("LabelSettings_b8sgh")
+horizontal_alignment = 1
+
+[node name="ButtonsBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="PlayAgain" type="Button" parent="MarginContainer/VBoxContainer/ButtonsBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qn7k8")
+theme_override_font_sizes/font_size = 48
+text = "Play Again?"

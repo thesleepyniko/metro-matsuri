@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dssh84h14inwi"]
+[gd_scene load_steps=5 format=3 uid="uid://dssh84h14inwi"]
 
 [ext_resource type="Script" uid="uid://bhtf0s4nx4gtl" path="res://main/scripts/menu.gd" id="1_pg3ki"]
 [ext_resource type="FontFile" uid="uid://h5wknl4iug0l" path="res://fonts/Yuji_Syuku/YujiSyuku-Regular.ttf" id="2_h280s"]
@@ -6,6 +6,9 @@
 [sub_resource type="LabelSettings" id="LabelSettings_b8sgh"]
 font = ExtResource("2_h280s")
 font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_pg3ki"]
+font_size = 30
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -45,6 +48,13 @@ layout_mode = 2
 layout_mode = 2
 text = "Metro Matsuri"
 label_settings = SubResource("LabelSettings_b8sgh")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "You can only place lines! cards don't work yet D:"
+label_settings = SubResource("LabelSettings_pg3ki")
 horizontal_alignment = 1
 
 [node name="ButtonsBox" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
