@@ -10,6 +10,7 @@ var min_station_dist = 4
 var blocked = []
 var stations = []
 var candidates = []
+var lines_and_stations = []
 var threshold = 0.4
 var accepted: Array[Vector2i] = []
 var r = min_station_dist - 1
@@ -60,6 +61,13 @@ func generate_map() -> void:
 	blocked = []
 	candidates = []
 	accepted = []
+	lines_and_stations = []
+	lines_and_stations.resize(width)
+	for i in range(width):
+		var temp_lines = []
+		temp_lines.resize(height)
+		temp_lines.fill(null)
+		lines_and_stations[i]=temp_lines
 	blocked.resize(width)
 	for i in range(width):
 		var temp_blocked = []
@@ -89,12 +97,19 @@ func generate_map() -> void:
 		var p: Vector2i = item["p"]
 		if not blocked[p.x][p.y]:
 			accepted.append(p)
+			lines_and_stations[p.x][p.y] = "station"
 			_paint_block(p, r)
 			if accepted.size() == stations_target:
 				break
 	_paint_free_cells()
 	for p in accepted:
 		tilemap.set_cell(p, source_id_station, station_atlas)
+	for x in lines_and_stations:
+		for y in x:
+			if y == "station":
+				pass
+			else:
+				x[y] = "blank"
 				#tilemap.set_cell(Vector2i(x, y), source_id_station, station_atlas) # place station
 			#elif noise_val <= 0.4:
 				#tilemap.set_cell(Vector2i(x, y), source_id_nothing, nothing_atlas) # place station
@@ -154,6 +169,7 @@ func _process(delta: float) -> void:
 		elif not _in_bounds(current_cell.x, current_cell.y):
 			pass
 		else:
+			lines_and_stations[current_cell.x]
 			tilemap.set_cell(current_cell, 0, Vector2i(0, 0)) # stop players from painting over stations
 func _on_edit_mode_pressed() -> void:
 	# first we hide the "Edit lines" button and make the editor stuff visible
@@ -171,7 +187,6 @@ func _on_edit_mode_pressed() -> void:
 	delete_line.remove_theme_color_override("font_color")
 	delete_line.remove_theme_color_override("font_focus_color")
 
-
 func _on_delete_line_pressed() -> void:
 	is_placing = false
 	already_placing = false
@@ -181,10 +196,7 @@ func _on_delete_line_pressed() -> void:
 	place_line.remove_theme_color_override("font_focus_color")
 	delete_line.add_theme_color_override("font_color", Color.DODGER_BLUE)
 	delete_line.add_theme_color_override("font_focus_color", Color.DODGER_BLUE)
-
-	 # Replace with function body.
 	
-
 func _on_stop_edit_pressed() -> void:
 	edit_mode.visible = true
 	place_line.visible = false
